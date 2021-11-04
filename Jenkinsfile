@@ -1,5 +1,5 @@
 node{
-    stage('Create test'){
-        echo "Hello World"
+    stage('Checkout'){
+        checkout scm
     }
 }
