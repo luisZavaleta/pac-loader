@@ -1,5 +1,5 @@
-node('principal'){
-    stage('Checkout'){
-        checkout scm
+node{
+    stage('Create test'){
+        echo "Hello World"
     }
 }
