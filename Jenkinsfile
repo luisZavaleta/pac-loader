@@ -4,8 +4,14 @@ node{
     stage('Checkout'){
         checkout scm
     }
-    stage('unit test'){
+    stage('docker help'){
         sh "docker run --help"
+        
+       
+    }
+    
+     stage('docker hello '){
+        sh "docker run hello-world"
         
        
     }
