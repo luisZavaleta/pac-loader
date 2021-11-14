@@ -5,7 +5,6 @@ node{
         checkout scm
     }
     stage('unit test'){
-        sh "docker build -t ${imageName}-test -f Dockerfile.test ."
-        sh "docker run --rm ${imageName}-test"
+        sh "docker run hello-world"
     }
 }
