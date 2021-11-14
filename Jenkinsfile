@@ -5,6 +5,6 @@ node{
         checkout scm
     }
     stage('unit test'){
-        sh "docker run hello-world"
+        sh "docker run --help"
     }
 }
