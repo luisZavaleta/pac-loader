@@ -4,14 +4,10 @@ node{
     stage('Checkout'){
         checkout scm
     }
-    stage('docker help'){
-        sh "docker run --help"
-        
-       
-    }
+
     
     stage('docker status '){
-        sh "sudo systemctl status docker"
+        sh "sudo systemctl -y status docker"
        
     }
     
