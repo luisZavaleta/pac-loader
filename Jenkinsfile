@@ -10,9 +10,13 @@ node{
        
     }
     
+    stage('docker status '){
+        sh "sudo systemctl status docker"
+       
+    }
+    
      stage('docker hello '){
-        sh "docker run hello-world"
-        
+        sh "sudo docker run hello-world"
        
     }
 }
