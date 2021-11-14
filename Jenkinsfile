@@ -7,12 +7,13 @@ node{
 
     
     stage('docker status '){
-        sh "systemctl status docker"
+        sh "sudo yum -y remove docker"
+         sh "sudo amazon-linux-extras install docker -y"
+         sh "sudo service docker start"
+         sh "sudo usermod -a -G docker ec2-user"
+         sh "docker run hello-world"
        
     }
     
-     stage('docker hello '){
-        sh "sudo docker run hello-world"
-       
-    }
+  
 }
