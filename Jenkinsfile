@@ -7,7 +7,7 @@ node{
 
     
     stage('docker status '){
-        sh "sudo systemctl -y status docker"
+        sh "sudo systemctl status  -y docker"
        
     }
     
