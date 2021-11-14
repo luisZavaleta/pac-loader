@@ -1,13 +1,11 @@
-def imageName = 'mlabouardy/movies-loader'
+def imageName = 'luiszavaleta/movies-loader'
 
 node{
     stage('Checkout'){
         checkout scm
     }
     stage('unit test'){
-        def imageTest= docker.build("${imageName}-test",  "-f Dockerfile.test .")
-        imageTest.inside{
-            sh 'python test_main.py'
-        }
+        sh "docker build -t ${imageName}-test -f Dockerfile.test ."
+        sh "docker run --rm ${imageName}-test"
     }
 }
