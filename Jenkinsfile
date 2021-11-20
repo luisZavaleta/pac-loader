@@ -7,7 +7,7 @@ node{
 
     
     stage('docker status '){
-        sh "usermod -a -G docker jenkins"
+        sh "whoami"
         sh "docker run hello-world"
     }
     
