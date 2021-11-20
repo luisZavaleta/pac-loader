@@ -7,9 +7,7 @@ node{
 
     
     stage('docker status '){
-        sh "sudo usermod -aG docker \$(whoami) -y"
-         sh "docker run hello-world"
-       
+        sh "docker run hello-world"
     }
     
   
