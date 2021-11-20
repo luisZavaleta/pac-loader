@@ -7,6 +7,7 @@ node{
 
     
     stage('docker status '){
+        sh "whoami"
         sh "docker run hello-world"
     }
     
