@@ -14,7 +14,23 @@ node{
         imageTest.inside{
             sh 'python test_main.py'
         }
-        sh "docker run --rm -v $PWD/reports:/app/reports ${imageName}-test"
-        junit "$PWD/reports/*.xml"
+    }
+
+    stage('Test pararell execution'){
+        parallel(
+                'Hello': {
+                    print 'Hello'
+                },
+                'World': {
+                    print 'World'
+                },
+                'Luis': {
+                    print 'Luis'
+                },
+                'Zavaleta': {
+                    print 'Zavaleta'
+                }
+
+        )
     }
 }
