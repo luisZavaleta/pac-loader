@@ -33,4 +33,9 @@ node{
 
         )
     }
+
+    
+    stage('Build'){
+        docker.build(imageName)
+    }
 }
