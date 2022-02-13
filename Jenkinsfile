@@ -34,8 +34,13 @@ node{
         )
     }
 
-    
     stage('Build'){
         docker.build(imageName)
+    }
+
+    stage('Push'){
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+            docker.image(imageName).push(env.BUILD_ID)
+        }
     }
 }
